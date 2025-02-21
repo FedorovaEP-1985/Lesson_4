@@ -1,15 +1,13 @@
 ﻿class StringUtils:
-    # def reverse_string(self, input_str, expected_output):
-    #     """
-    #     тест 1: Переворачивает строку и возвращает перевернутую строку.
-    #     Пример: `reverse_string("привет") -> "тевирп"`
-    #     """
-    #     return input_str[::-1]
-
     def reverse_string(self, input_str):
         if input_str is None:
             return None
         return input_str[::-1]
+
+        """
+         тест 1: Переворачивает строку и возвращает перевернутую строку.
+         Пример: `reverse_string("привет") -> "тевирп"`
+         """
 
     def capitalize(self, string: str) -> str:
         """

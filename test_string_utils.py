@@ -5,32 +5,6 @@ string_util = StringUtils
 
 # тест 1: Переворачивает строку и возвращает перевернутую строку, тестирует функцию reverse_string с различными входными параметрами.
 
-# @pytest.mark.parametrize(
-#     "input_str, expected_output",
-#     [
-#         ("Тест", "тест"),
-#         ("", ""),
-#         (" ", " "),
-#         (None, None),
-#         ("123", "321"),
-#         ("04 апреля 2023", "3204 арылапр 2304"),
-#     ],)
-# def test_reverse_string(input_str, expected_output):
-#     string_util = StringUtils
-#     # assert StringUtils.reverse_string(input_str) == expected_output
-#     assert [StringUtils.reverse_string(input_str)], (StringUtils.reverse_string(input_str)) == expected_output
-#     # Обработка случая, когда input_str является None
-#
-#     if input_str is None:
-#         result = test_reverse_string(None)
-#         assert (
-#             result == expected_output
-#         ), f"Ожидалось {expected_output}, но получилось {result}"
-#     else:
-#         result = test_reverse_string(input_str)
-#         assert (
-#             result == expected_output
-#         ), f"Ожидалась строка '{expected_output}', но получилась '{result}'"
 @pytest.mark.parametrize(
     "input_str, expected_output",
     [
