@@ -5,32 +5,45 @@ string_util = StringUtils
 
 # тест 1: Переворачивает строку и возвращает перевернутую строку, тестирует функцию reverse_string с различными входными параметрами.
 
+# @pytest.mark.parametrize(
+#     "input_str, expected_output",
+#     [
+#         ("Тест", "тест"),
+#         ("", ""),
+#         (" ", " "),
+#         (None, None),
+#         ("123", "321"),
+#         ("04 апреля 2023", "3204 арылапр 2304"),
+#     ],)
+# def test_reverse_string(input_str, expected_output):
+#     string_util = StringUtils
+#     # assert StringUtils.reverse_string(input_str) == expected_output
+#     assert [StringUtils.reverse_string(input_str)], (StringUtils.reverse_string(input_str)) == expected_output
+#     # Обработка случая, когда input_str является None
+#
+#     if input_str is None:
+#         result = test_reverse_string(None)
+#         assert (
+#             result == expected_output
+#         ), f"Ожидалось {expected_output}, но получилось {result}"
+#     else:
+#         result = test_reverse_string(input_str)
+#         assert (
+#             result == expected_output
+#         ), f"Ожидалась строка '{expected_output}', но получилась '{result}'"
 @pytest.mark.parametrize(
     "input_str, expected_output",
     [
-        ("Тест", "тест"),
+        ("Тест", "тсеТ"),  # Реверс строки
         ("", ""),
         (" ", " "),
         (None, None),
-        ("123", "321"),
-        ("04 апреля 2023", "3204 арылапр 2304"),
-    ],)
+        ("123", "321"),  # Реверс строки
+    ],
+)
 def test_reverse_string(input_str, expected_output):
-    string_util = StringUtils
-    # assert StringUtils.reverse_string(input_str) == expected_output
-    assert [StringUtils.reverse_string(input_str)], (StringUtils.reverse_string(input_str)) == expected_output
-    # Обработка случая, когда input_str является None
-
-    if input_str is None:
-        result = test_reverse_string(None)
-        assert (
-            result == expected_output
-        ), f"Ожидалось {expected_output}, но получилось {result}"
-    else:
-        result = test_reverse_string(input_str)
-        assert (
-            result == expected_output
-        ), f"Ожидалась строка '{expected_output}', но получилась '{result}'"
+    string_util = StringUtils()
+    assert string_util.reverse_string(input_str) == expected_output
 
     # тест кейс 2: Проверяет, делает функцию "capitalize" первую букву заглавной
     @pytest.mark.parametrize(
@@ -149,7 +162,7 @@ def test_reverse_string(input_str, expected_output):
         ("milk", "", "milk"),
     ],
     )
-    def test_delete_symbol(string, symbol):
+    def delete_symbol(string, symbol):
         return string.replace(symbol, '')
     #Тест 6: Преобразует список элементов в строку с указанным разделителем \n
     @pytest.mark.parametrize('list, output_list', [
