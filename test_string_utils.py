@@ -3,7 +3,7 @@ from string_utils import StringUtils
 
 string_util = StringUtils
 
-# тест 1: Переворачивает строку и возвращает перевернутую строку, тестирует функцию reverse_string с различными входными параметрами.
+   # тест 1: Переворачивает строку и возвращает перевернутую строку, тестирует функцию reverse_string с различными входными параметрами.
 
 @pytest.mark.parametrize(
     "input_str, expected_output",
@@ -20,6 +20,7 @@ def test_reverse_string(input_str, expected_output):
     assert string_util.reverse_string(input_str) == expected_output
 
     # тест кейс 2: Проверяет, делает функцию "capitalize" первую букву заглавной
+
     @pytest.mark.parametrize(
         "string, result",
     [
@@ -43,7 +44,8 @@ def test_reverse_string(input_str, expected_output):
         print(f"Actual result: {res}")
         assert res == result
 
-    # Тест кейс 3: Проверяет, наличие символа в строке и возвращает True/False.
+    # Тест кейс 3: Проверяет функцию "contains" наличие символа в строке и возвращает True/False.
+
     @pytest.mark.parametrize(
         "string, symbol, result",
         [
@@ -74,7 +76,7 @@ def test_reverse_string(input_str, expected_output):
         print(f"Actual result: {res}")
         assert res == result
 
-    # Тест кейс 3: Проверяет, удаляет ли функция "trim" пробелы в начале строки и возвращает обрезанную строку.
+    # Тест кейс 4: Проверяет, удаляет ли функция "trim" пробелы в начале строки и возвращает обрезанную строку.
     @pytest.mark.parametrize(
         "string, result",
         [
@@ -99,26 +101,8 @@ def test_reverse_string(input_str, expected_output):
         res = string_util.trim(string)
         print(f"Actual result: {res}")
         assert res == result
-# Тест кейс 4: Проверяет, удаляет ли функция "delete_symbol" указанный символ
-# @pytest.mark.parametrize(
-#     "string, symbol, result",
-#     [
-#         # positive test cases:
-#         ("test", "t", "es"),
-#         ("Voshod", 'o', "Vshd"),
-#         ("123", "1", "23"),
-#         ("Sky Pro", "", "SkyPro"),
-#         ("spase", "spa", "se"),
-#         # negative test cases:
-#         ("moon", "k", "moon"),
-#         ("", "", ""),
-#         ("", "l", ""),
-#         ("milk", "", "milk"),
-#     ],)
-# def test_delete_symbol(string, symbol, result):
-#     string_util = StringUtils()
-#     res = string_util.delete_symbol(string, symbol)
-#     assert res == result
+
+    #тест 5: Проверяет функцию 'delete", удаляет все вхождения указанного символа из строки и возвращает новую строку.
 
     @pytest.mark.parametrize (
         "string, symbol, result",
