@@ -19,28 +19,29 @@ def test_reverse_string(input_str, expected_output):
     string_util = StringUtils()
     assert string_util.reverse_string(input_str) == expected_output
 
-    # тест кейс 2: Проверяет, делает функцию "capitalize" первую букву заглавной
+    # тест кейс 2: Проверяет, делает функцию "capitalize" первую букву заглавной.
 
     @pytest.mark.parametrize(
         "string, result",
-    [
-        # pozitive:
-        ("hello", "Hello"),
-        ("venera", "Venera"),
-        ("h", "H"),
-        ("python", "Python"),
-        ("привет", "Привет"),
-        # negative:
-        ("Hello", "Hello"),
-        ("LTE", "Lte"),
-        ("123abc", "123abc"),
-        ("Skypro", "skypro"),
-    ], )
+        [
+            # Positive cases
+            ("hello", "Hello"),
+            ("venera", "Venera"),
+            ("h", "H"),
+            ("python", "Python"),
+            ("привет", "Привет"),
+            # Negative cases
+            ("Hello", "Hello"),
+            ("LTE", "Lte"),
+            ("123abc", "123abc"),
+            ("Skypro", "Skypro"),
+        ],
+    )
     def test_capitalize(string, result):
-        string_util = StringUtils
-        print(f"input string: {string}")
+        string_util = StringUtils()  # Instantiate the class
+        print(f"Input string: {string}")
         print(f"Expected result: {result}")
-        res = string_util.capitalize(string)
+        res = string_util.capitalize(string)  # Call the method
         print(f"Actual result: {res}")
         assert res == result
 
