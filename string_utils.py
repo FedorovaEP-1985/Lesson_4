@@ -1,13 +1,16 @@
 ﻿class StringUtils:
+
+
     def reverse_string(self, input_str):
         if input_str is None:
             return None
         return input_str[::-1]
 
         """
-         тест 1: Переворачивает строку и возвращает перевернутую строку.
-         Пример: `reverse_string("привет") -> "тевирп"`
+        тест 1: Переворачивает строку и возвращает перевернутую строку.
+        Пример: `reverse_string("привет") -> "тевирп"`
          """
+
 
     def capitalize(self, string: str) -> str:
         """
@@ -15,12 +18,15 @@
         Пример: `capitalize ("venera")-> "Venera"`
         """
         return [string.capitalize()](string.capitalize)
+
+
     def trim(self, string: str) -> str:
         """
         тест 3: Удаляет пробелы в начале строки и возвращает обрезанную строку.
         Пример: `trim("   venera") -> "venera"`
         """
         return [string.lstrip()](string.lstrip())
+
 
     def contains(string: str, symbol: str) -> bool:
         """
@@ -30,15 +36,18 @@
         """
         return symbol in string
 
+
     def delete_symbol(self, string: str, symbol: str) -> str:
         """
-        тест 5: Удаляет все вхождения указанного символа из строки и возвращает новую строку.
+        тест 5: Удаляет все вхождения указанного символа из строки
+        и возвращает новую строку.
             `string` - строка для обработки
             `symbol` - искомый символ для удаления
         """
         if self.contains(string, symbol):
             string = string.replace(symbol, "")
         return string
+
 
     def list_to_string(self, lst: list, joiner=", ") -> str:
             """

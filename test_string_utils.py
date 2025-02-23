@@ -111,7 +111,7 @@ def test_reverse_string(input_str, expected_output):
 
     # Тест 5: Проверяет функцию 'delete",
     # удаляет все вхождения указанного символа
-    # из стр и возвращает новую строку.
+    # из строки и возвращает новую строку.
     @pytest.mark.parametrize (
         "string, symbol, result",
     [
