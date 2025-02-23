@@ -1,11 +1,12 @@
 ﻿import pytest
 
 from string_utils import StringUtils
-
 string_util = StringUtils()
 
-    # Тест 1: Переворачивает строку и возвращает перевернутую строку,
-    # тестирует функцию reverse_string с различными входными параметрами.
+# Тест 1: Переворачивает строку и возвращает перевернутую строку,
+# тестирует функцию reverse_string с различными входными параметрами.
+
+
 @pytest.mark.parametrize(
     "input_str, expected_output",
     [
@@ -19,10 +20,9 @@ string_util = StringUtils()
 def test_reverse_string(input_str, expected_output):
     string_util = StringUtils()
     assert string_util.reverse_string(input_str) == expected_output
-
-
     # Тест кейс 2: Проверяет, делает функцию "capitalize"
     # первую букву заглавной.
+
     @pytest.mark.parametrize(
         "string, result",
         [
@@ -33,9 +33,7 @@ def test_reverse_string(input_str, expected_output):
             ("python", "Python"),
             ("привет", "Привет"),
             # Negative cases
-            ("Hello", "Hello"),
-            ("LTE", "Lte"),
-            ("123abc", "123abc"),
+            ("Hello", "Hello"), ("LTE", "Lte"), ("123abc", "123abc"),
             ("Skypro", "Skypro"),
         ],
     )
@@ -46,10 +44,10 @@ def test_reverse_string(input_str, expected_output):
         res = string_util.capitalize(string)  # Call the method
         print(f"Actual result: {res}")
         assert res == result
+    # Тест кейс 3: Проверяет функцию "contains"
+    # наличие символа в строке
+    # и возвращает True/False.
 
-
-    # Тест кейс 3: Проверяет функцию "contains" наличие
-    # символа в строке и возвращает True/False.
     @pytest.mark.parametrize(
         "string, symbol, result",
         [
@@ -62,13 +60,9 @@ def test_reverse_string(input_str, expected_output):
             ("GPS", "P", True),
             ("", "", True),
             # negative test cases:
-            ("City", "c", False),
-            ("parameter", "P", False),
-            ("hello", "x", False),
-            ("hello", "!", False),
-            ("hello", "", False),
-            ("", "x", False),
-            ("hello", "xyz", False),
+            ("City", "c", False), ("parameter", "P", False),
+            ("hello", "x", False), ("hello", "!", False), ("hello", "", False),
+            ("", "x", False), ("hello", "xyz", False),
         ],
     )
     def test_contains(string, symbol, result):
@@ -79,10 +73,10 @@ def test_reverse_string(input_str, expected_output):
         res = string_util.contains(string, symbol)
         print(f"Actual result: {res}")
         assert res == result
+    # Тест кейс 4: Проверяет, удаляет ли функция
+    # "trim" пробелы в начале строки
+    # и возвращает обрезанную строку.
 
-
-    # Тест кейс 4: Проверяет, удаляет ли функция "trim" пробелы
-    # в начале строки и возвращает обрезанную строку.
     @pytest.mark.parametrize(
         "string, result",
         [
@@ -108,36 +102,32 @@ def test_reverse_string(input_str, expected_output):
         print(f"Actual result: {res}")
         assert res == result
 
-
     # Тест 5: Проверяет функцию 'delete",
     # удаляет все вхождения указанного символа
     # из строки и возвращает новую строку.
-    @pytest.mark.parametrize (
-        "string, symbol, result",
-    [
-        # positive test cases:
-        ("test", "t", "es"),
-        ("Voshod", 'o', "Vshd"),
-        ("123", "1", "23"),
-        ("Sky Pro", " ", "SkyPro"),
-        ("spase", "spa", "se"),
-        # negative test cases:
-        ("moon", "k", "moon"),
-        ("", "", ""),
-        ("", "l", ""),
-        ("milk", "", "milk"),
-    ],
+    @pytest.mark.parametrize(
+        "string, symbol, result", [
+            # positive test cases:
+            ("test", "t", "es"), ("Voshod", 'o', "Vshd"), ("123", "1", "23"),
+            ("Sky Pro", " ", "SkyPro"), ("spase", "spa", "se"),
+            # negative test cases:
+            ("moon", "k", "moon"), ("", "", ""),
+            ("", "l", ""), ("milk", "", "milk"),
+        ],
     )
     def delete_symbol(string, symbol):
         return string.replace(symbol, '')
+        # Тест 6: Преобразует список элементов в строку
+        # с указанным разделителем \n
 
-
-    # Тест 6: Преобразует список элементов в строку
-    # с указанным разделителем \n
-    @pytest.mark.parametrize('list, output_list', [
-        (["", "", "", ""], ",,,"),
-        ([" ", " ", " ", " "], " , , , "),
-    ],)
-    def test_list_to_string_negative(list, output_list):
+    @pytest.mark.parametrize(
+        'list, output_list',
+        [
+            (["", "", "", ""], ",,,"),
+            ([" ", " ", " ", " "], " , , , "),
+        ],
+    )
+    def test_list_to_string_negative(
+            list, output_list):
         string_util = StringUtils()
         assert string_util.list_to_string(list) == output_list
