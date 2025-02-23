@@ -1,0 +1,8 @@
+Defect ID: DEF-001
+Description: Method reverse_string returns incorrect result when input is None.
+Steps to Reproduce:
+1. Call StringUtils.reverse_string(None).
+Expected Result: None
+Actual Result: TypeError: 'NoneType' object is not subscriptable
+Severity: High
+Priority: Critic
